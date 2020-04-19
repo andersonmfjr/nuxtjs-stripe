@@ -1,40 +1,6 @@
 import path from 'path'
 import { Module } from '@nuxt/types'
-
-declare global {
-  interface Window {
-    Stripe: stripe.StripeStatic
-  }
-}
-
-declare module 'vue/types/vue' {
-  interface Vue {
-    $stripe: stripe.Stripe
-  }
-}
-
-declare module '@nuxt/types' {
-  interface NuxtAppOptions {
-    $stripe: stripe.Stripe
-  }
-
-  interface Context {
-    $stripe: stripe.Stripe
-  }
-}
-
-declare module 'vuex/types/index' {
-  interface Store<S> {
-    $stripe: stripe.Stripe
-  }
-}
-
-export interface StripeModuleOptions {
-  publishableKey: string
-  defer?: boolean
-  async?: boolean
-  version?: string
-}
+import { StripeModuleOptions } from './types/index'
 
 const stripeModule: Module<StripeModuleOptions> = function(moduleOptions: StripeModuleOptions) {
   const defaults: StripeModuleOptions = {
