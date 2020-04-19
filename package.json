@@ -15,6 +15,14 @@
     "prepare": "yarn build"
   },
   "author": "andersonmfjr <andersonmfjr@gmail.com>",
+  "homepage": "https://github.com/andersonmfjr/nuxtjs-stripe#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andersonmfjr/nuxtjs-stripe"
+  },
+  "bugs": {
+    "url": "https://github.com/andersonmfjr/nuxtjs-stripe/issues"
+  },
   "license": "MIT",
   "main": "dist/module.js",
   "types": "dist/module.d.ts",
