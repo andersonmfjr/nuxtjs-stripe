@@ -1,6 +1,6 @@
 {
   "name": "nuxtjs-stripe",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Nuxt.js module for Stripe.js",
   "keywords": [
     "stripe",
@@ -30,7 +30,8 @@
     "@nuxt/types": "^0.7.4",
     "@types/stripe-v3": "^3.1.17",
     "nuxt": "^2.12.2",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vuex": "^3.2.0"
   },
   "devDependencies": {
     "typescript": "^3.8.3"
