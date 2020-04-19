@@ -14,7 +14,7 @@ interface Options {
   version?: string
 }
 
-const stripeModule: Module<Options> = function(moduleOptions) {
+const stripeModule: Module<Options> = function(moduleOptions: Options) {
   const defaults: Options = {
     publishableKey: '',
     defer: true,
