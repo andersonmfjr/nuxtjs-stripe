@@ -49,4 +49,6 @@ const stripeModule: Module<Options> = function(moduleOptions: Options) {
   })
 }
 
+export const meta = require('../package.json');
+
 export default stripeModule
