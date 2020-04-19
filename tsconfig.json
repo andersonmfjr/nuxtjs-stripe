@@ -17,8 +17,8 @@
     },
     "outDir": "dist",
     "types": [
-      "@nuxt/types",
-      "@types/stripe-v3"
+      "@types/stripe-v3",
+      "@nuxt/types"
     ]
   },
   "exclude": [
