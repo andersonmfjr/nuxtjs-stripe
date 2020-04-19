@@ -7,22 +7,40 @@ declare global {
   }
 }
 
-interface Options {
+declare module 'vue/types/vue' {
+  interface Vue {
+    $stripe: stripe.Stripe
+  }
+}
+
+declare module '@nuxt/types' {
+  interface NuxtAppOptions {
+    $stripe: stripe.Stripe
+  }
+}
+
+declare module 'vuex/types/index' {
+  interface Store<S> {
+    $stripe: stripe.Stripe
+  }
+}
+
+export interface StripeModuleOptions {
   publishableKey: string
   defer?: boolean
   async?: boolean
   version?: string
 }
 
-const stripeModule: Module<Options> = function(moduleOptions: Options) {
-  const defaults: Options = {
+const stripeModule: Module<StripeModuleOptions> = function(moduleOptions: StripeModuleOptions) {
+  const defaults: StripeModuleOptions = {
     publishableKey: '',
     defer: true,
     async: true,
     version: 'v3'
   }
 
-  const options: Options = Object.assign(
+  const options: StripeModuleOptions = Object.assign(
     {},
     defaults,
     this.options.stripe,
