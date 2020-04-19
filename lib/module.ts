@@ -1,6 +1,12 @@
-import path from 'path'
 import { Module } from '@nuxt/types'
-import { StripeModuleOptions } from './types/index'
+import path from 'path'
+
+interface StripeModuleOptions {
+  publishableKey: string
+  defer?: boolean
+  async?: boolean
+  version?: string
+}
 
 const stripeModule: Module<StripeModuleOptions> = function(moduleOptions: StripeModuleOptions) {
   const defaults: StripeModuleOptions = {
