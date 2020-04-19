@@ -1,12 +1,5 @@
 import Vue from 'vue'
 
-export interface StripeModuleOptions {
-  publishableKey: string
-  defer?: boolean
-  async?: boolean
-  version?: string
-}
-
 declare global {
   interface Window {
     Stripe: stripe.StripeStatic

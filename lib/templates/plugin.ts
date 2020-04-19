@@ -1,6 +1,12 @@
 import { Plugin } from '@nuxt/types'
 import Vue from 'vue'
 
+declare module '@nuxt/types' {
+  interface Context {
+    $stripe: stripe.Stripe
+  }
+}
+
 const stripePlugin: Plugin = (ctx, inject) => {
   if (typeof window !== 'undefined' && window.Stripe) {
     if (!Vue.prototype.$stripe) {
