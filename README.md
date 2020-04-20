@@ -92,7 +92,7 @@ export default Vue.extend({
 </script>
 ```
 
-Other example:
+Usage with Vuex:
 
 ```js
 ...
