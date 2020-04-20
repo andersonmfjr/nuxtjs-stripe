@@ -8,12 +8,12 @@
     "stripe.js",
     "nuxt.js"
   ],
-  "scripts": {
-    "build": "yarn clean && yarn compile",
-    "clean": "rm -rf ./dist",
-    "compile": "tsc",
-    "prepare": "yarn build"
-  },
+  "files": [
+    "lib",
+    "types/*.d.ts"
+  ],
+  "main": "lib/module.js",
+  "types": "types/index.d.ts",
   "author": "andersonmfjr <andersonmfjr@gmail.com>",
   "homepage": "https://github.com/andersonmfjr/nuxtjs-stripe#readme",
   "repository": {
@@ -24,15 +24,8 @@
     "url": "https://github.com/andersonmfjr/nuxtjs-stripe/issues"
   },
   "license": "MIT",
-  "main": "dist/module.js",
-  "types": "dist/module.d.ts",
   "dependencies": {
-    "@nuxt/types": "^0.7.4",
-    "@types/stripe-v3": "^3.1.17",
-    "nuxt": "^2.12.2",
-    "vue": "^2.6.11"
+    "@types/stripe-v3": "^3.1.17"
   },
-  "devDependencies": {
-    "typescript": "^3.8.3"
-  }
+  "devDependencies": {}
 }
