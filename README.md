@@ -53,11 +53,12 @@ or even
 
 ## TypeScript support
 
-Add it to the types of your `tsconfig.json`:
+Add it to the `"types"` of your `tsconfig.json` after the `@nuxt/types`:
 
 ```json
 {
   "types": [
+    "@nuxt/types",
     "nuxtjs-stripe"
   ]
 }
@@ -91,7 +92,37 @@ export default Vue.extend({
 </script>
 ```
 
-See Stripe documentation: https://stripe.com/docs/stripe-js/reference
+Other example:
+
+```js
+...
+const actions: ActionTree<PaymentState, RootState> = {
+  async confirmPayment({ state }) {
+    try {
+      const response = await this.$stripe.confirmCardPayment(state.secret, {
+        payment_method: {
+          card: {
+            token: state.cardToken
+          },
+          billing_details: {
+            name: state.customerName
+          }
+        }
+      })
+    } catch (error) {
+      // handle error
+    }
+  }
+}
+...
+```   
+   
+> **TIP**
+>
+> You can also use `$stripe` property on the nuxt [`Context`](https://nuxtjs.org/api/context). Adding `nuxtjs-stripe` to your types [(see above)](#typescript-support) will import the types from the package and make typescript aware of the additions to the `Context` interface.
+
+See Stripe documentation for details: https://stripe.com/docs/stripe-js/reference
+
 
 ## License
 
