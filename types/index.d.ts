@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import '@types/stripe-v3'
 
 declare global {
   interface Window {
@@ -6,23 +6,23 @@ declare global {
   }
 }
 
-declare module '@nuxt/types' {
-  interface Context {
+declare module 'vuex/types/index' {
+  interface Store<S> {
     $stripe: stripe.Stripe
   }
+}
+
+declare module '@nuxt/types' {
   interface NuxtAppOptions {
+    $stripe: stripe.Stripe
+  }
+  interface Context {
     $stripe: stripe.Stripe
   }
 }
 
 declare module 'vue/types/vue' {
   interface Vue {
-    $stripe: stripe.Stripe
-  }
-}
-
-declare module 'vuex/types/index' {
-  interface Store<S> {
     $stripe: stripe.Stripe
   }
 }
